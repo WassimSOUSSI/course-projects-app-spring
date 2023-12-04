@@ -1,5 +1,6 @@
 package com.wassim.exceptionhandling.controllers;
 
+import com.wassim.exceptionhandling.exceptions.StudentNotFound;
 import com.wassim.exceptionhandling.model.Student;
 import com.wassim.exceptionhandling.services.StudentService;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +27,7 @@ public class StudentController {
 
     @GetMapping("{studentId}")
     public ResponseEntity<Student> getStudent(@PathVariable int studentId){
+        if (studentId>studentService.getStudents().size()) throw new StudentNotFound("Student with id : "+studentId +" not found!");
         return new ResponseEntity<>(studentService.getStudent(studentId), HttpStatus.OK);
     }
 }
