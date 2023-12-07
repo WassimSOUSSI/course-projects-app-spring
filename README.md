@@ -12,3 +12,6 @@ A spring project that make use of spring data rest to generate rest endpoints ba
 
 # spring-security-InMemory
 A spring project that implements an in-memory authentication mechanism with access roles using Spring Security.
+
+# spring-security-JDBC
+A spring project that implements JDBC custom tables authentication mechanism with access roles using Spring Security.
